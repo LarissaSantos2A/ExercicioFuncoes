@@ -1,0 +1,99 @@
+import java.util.Scanner;
+public class Exercicios {
+	public static int r;
+	public static void main(String[]args) {
+		Scanner in = new Scanner(System.in);
+		int n,id,t = 0,p,b,e;
+		String s,feminino = null,masculino = null;
+		System.out.println("Digite 1 para calcular o fatorial");
+		
+		System.out.println("Digite 2 para calcular a tabuada");
+	
+		System.out.println("Digite 3 para calcular sua aposentadoria");
+		
+		System.out.println("Digite 4 para calcular a potência ");
+		r = in.nextInt();
+		
+		if(r==1) {
+			System.out.println("Digite um número");
+			int n1 = in.nextInt();
+			System.out.println(fatorial(n1));
+		}
+		else if (r==2) {
+			System.out.println("Digite um número");
+	        n = in.nextInt();
+	        tabuada(n);
+		}
+		else if (r==3) {
+			System.out.println("Digite sua idade");
+			id= in.nextInt();
+			System.out.println("Digite seu sexo");
+			s = in.next();
+			aposentadoria(id,s,feminino,masculino,t);
+			
+		}
+		else if (r==4) {
+			System.out.println("Digite a base");
+			 b = in.nextInt();
+			System.out.println("Digite o expoente");
+			 e = in.nextInt();
+			potencia(b,e, e);
+		}
+
+		}
+	//fatorial  
+	public static int fatorial (int n1) {
+		
+		int i = 1;
+		int fatorial = 1;
+		while(i <= n1) {
+		fatorial*=i;
+			i++;
+		}
+		return fatorial;
+	}
+		//tabuada
+	    public static void tabuada(int n) {
+	    	for(int i=1;i<11;i++) {
+	    		int r = n * i;
+	    		System.out.println(n+"x"+i+"="+r);
+	    			}
+	    	}
+	    //aposentadoria
+		  public static void aposentadoria(int id,String s,String feminino,String masculino,int t) {
+		     switch(s) {
+		    case "feminino" :
+		    t = (55-id);
+		    System.out.println( "Faltam " +t+  " anos para se aposentar");
+		        break;  
+		    }
+		  switch(s) {
+	    	case "masculino" :
+	    	t = (60-id);
+	    	System.out.println("Faltam " +t+  " anos para se aposentar");
+			    break;
+	  
+		    		}
+		    }
+		  //potencia
+		     public static void potencia(int b, int e, int p) {
+			  if (e>0){
+               p =1;
+          for(int i = 0;i<e;i++){
+              p= p*b;
+          }
+          System.out.println("O resultado é " +p);
+              
+          }
+      
+      }
+		    
+			    }
+
+	    
+
+
+
+
+
+
